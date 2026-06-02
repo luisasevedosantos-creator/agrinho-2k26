@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroFuturo Sustentável</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://tailwindcss.com"></script>
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- HEADER / NAVEGAÇÃO -->
+    <header class="bg-white/90 backdrop-blur-md shadow-sm fixed w-full top-0 z-50 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-leaf text-emerald-600 text-2xl"></i>
+                <span class="font-bold text-xl tracking-tight text-gray-900">Agro<span class="text-emerald-600">Futuro</span></span>
+            </div>
+            
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-gray-600">
+                <a href="#inicio" class="hover:text-emerald-600 transition-colors">Início</a>
+                <a href="#producao" class="hover:text-emerald-600 transition-colors">Produção</a>
+                <a href="#sustentabilidade" class="hover:text-emerald-600 transition-colors">Sustentabilidade</a>
+                <a href="#desafios" class="hover:text-emerald-600 transition-colors">Desafios</a>
+                <a href="#ferramentas" class="hover:text-emerald-600 transition-colors">Ferramentas</a>
+                <a href="#contato" class="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors">Contato</a>
+            </nav>
+
+            <!-- Botão Mobile -->
+            <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile Desbatível -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-4 font-medium shadow-lg">
+            <a href="#inicio" class="mobile-link text-gray-600 hover:text-emerald-600 py-2">Início</a>
+            <a href="#producao" class="mobile-link text-gray-600 hover:text-emerald-600 py-2">Produção</a>
+            <a href="#sustentabilidade" class="mobile-link text-gray-600 hover:text-emerald-600 py-2">Sustentabilidade</a>
+            <a href="#desafios" class="mobile-link text-gray-600 hover:text-emerald-600 py-2">Desafios</a>
+            <a href="#ferramentas" class="mobile-link text-gray-600 hover:text-emerald-600 py-2">Ferramentas</a>
+            <a href="#contato" class="mobile-link bg-emerald-600 text-white text-center px-4 py-2 rounded-lg mt-2">Contato</a>
+        </div>
+    </header>
+
+    <!-- SEÇÃO HERO (INÍCIO) -->
+    <section id="inicio" class="pt-32 pb-20 md:pt-48 md:pb-32 bg-gradient-to-b from-emerald-50 to-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="bg-emerald-100 text-emerald-800 text-sm font-semibold px-3 py-1 rounded-full">O Futuro do Campo</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                    Tecnologia que alimenta o mundo, <span class="text-emerald-600">preservação</span> que garante o amanhã.
+                </h1>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Descubra como o agronegócio moderno utiliza inovação e ciência para expandir a produção econômica em harmonia com os recursos naturais do nosso planeta.
+                </p>
+                <div class="pt-2">
+                    <a href="#ferramentas" class="inline-block bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-emerald-700 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                        Testar Ferramentas Interativas
+                    </a>
+                </div>
+            </div>
+            <div class="relative flex justify-center">
+                <!-- Imagem Representativa (Mock) -->
+                <div class="w-full h-80 md:h-[400px] bg-emerald-800 rounded-2xl shadow-xl overflow-hidden relative">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-80" style="background-image: url('https://unsplash.com');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
+                        <p class="text-white font-medium flex items-center gap-2">
+                            <i class="fa-solid fa-drone text-emerald-400"></i> Tecnologia de precisão aliada ao monitoramento ambiental.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 1: PRODUÇÃO AGRÍCOLA (ECONOMIA) -->
+    <section id="producao" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-3xl font-bold text-gray-900 tracking-tight">O Motor da Nossa Economia</h2>
+                <p class="text-gray-600">A força produtiva do campo que move o país e as inovações que aceleram esse crescimento de forma estruturada.</p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">~25% do PIB</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">O agronegócio é um dos pilares financeiros do Brasil, gerando milhões de empregos internos e liderando as exportações.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Agricultura de Precisão</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Aplicação de insumos e fertilizantes no metro quadrado exato através de dados coletados via satélites e sensores de solo.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow sm:col-span-2 lg:col-span-1">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-drone"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Monitoramento por Drones</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Mapeamento térmico e visual que detecta pragas precocemente, diminuindo o uso generalizado de defensivos químicos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 2: SUSTENTABILIDADE -->
+    <section id="sustentabilidade" class="py-20 bg-emerald-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-bold tracking-tight">Sustentabilidade Inteligente no Campo</h2>
+                    <p class="text-emerald-100 leading-relaxed">
+                        Preservar recursos não significa produzir menos. O agronegócio sustentável adota metodologias limpas que protegem a biodiversidade enquanto aumentam o rendimento das safras.
+                    </p>
+                    <div class="space-y-4 pt-4">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-8 h-8 bg-emerald-800 text-emerald-400 rounded-full flex items-center justify-center shrink-0 mt-1"><i class="fa-solid fa-droplet"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">Irrigação Inteligente</h4>
+                                <p class="text-emerald-100 text-sm">Gotejamento automatizado baseado na umidade real do solo que reduz o gasto hídrico em até 40%.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-8 h-8 bg-emerald-800 text-emerald-400 rounded-full flex items-center justify-center shrink-0 mt-1"><i class="fa-solid fa-sun"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">Matriz Energética Renovável</h4>
+                                <p class="text-emerald-100 text-sm">Uso de painéis solares rurais e usinas de biomassa para neutralizar as emissões operacionais.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-emerald-800 p-8 rounded-2xl border border-emerald-700 shadow-xl space-y-6">
