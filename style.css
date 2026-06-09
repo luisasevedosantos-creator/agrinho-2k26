@@ -1,0 +1,147 @@
+/* ==========================================================================
+   1. VARIÁVEIS DE CONFIGURAÇÃO (Cores, Fontes e Padrões)
+   ========================================================================== */
+:root {
+    --cor-principal: #2E7D32;       /* Verde Agrinho (Sustentabilidade/Campo) */
+    --cor-secundaria: #F57C00;      /* Laranja (Inovação/Energia) */
+    --cor-fundo: #F4F6F4;           /* Cinza bem claro (Leitura confortável) */
+    --cor-texto: #333333;           /* Grafite escuro para legibilidade */
+    --cor-branco: #FFFFFF;
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --borda-arredondada: 8px;
+    --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   2. RESET E ESTILOS GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================================================
+   3. LAYOUT E ESTRUTURA PRINCIPAL
+   ========================================================================== */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    padding: 1.5rem 0;
+    box-shadow: var(--sombra-suave);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+/* Menu de Navegação */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Seção Principal (Hero) */
+.hero {
+    background: linear-gradient(rgba(46, 125, 50, 0.8), rgba(0, 0, 0, 0.6)), url('sua-imagem-de-fundo.jpg') center/cover;
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Conteúdo e Cards */
+.conteudo-principal {
+    padding: 3rem 0;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: var(--cor-branco);
+    padding: 20px;
+    border-radius: var(--borda-arredondada);
+    box-shadow: var(--sombra-suave);
+    border-top: 5px solid var(--cor-principal);
+}
+
+/* Rodapé */
+footer {
+    background-color: #1b4d22;
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   4. RESPONSIVIDADE (Design adaptável para Celulares)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+}
