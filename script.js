@@ -3,11 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
     inicializarMenu();
     inicializarFormulario();
     inicializarAnimacoes();
+    inicializarFerramenta();
 });
 
 /**
- * 1. CONTROLE DO MENU RESPONSIVO (Interatividade)
- * Altera visualmente o menu de navegação em telas menores.
+ * 1. CONTROLE DO MENU RESPONSIVO
+ * Abre/fecha o menu de navegação em telas menores.
  */
 function inicializarMenu() {
     const botaoMenu = document.querySelector(".menu-toggle");
@@ -15,22 +16,34 @@ function inicializarMenu() {
 
     if (botaoMenu && listaMenu) {
         botaoMenu.addEventListener("click", () => {
-            listaMenu.classList.toggle("ativo");
-            botaoMenu.setAttribute("aria-expanded", listaMenu.classList.contains("ativo"));
+            const aberto = listaMenu.classList.toggle("ativo");
+            botaoMenu.setAttribute("aria-expanded", aberto);
+            botaoMenu.innerHTML = aberto
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+        });
+
+        // Fecha o menu ao clicar em um link (mobile)
+        listaMenu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                listaMenu.classList.remove("ativo");
+                botaoMenu.setAttribute("aria-expanded", "false");
+                botaoMenu.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
         });
     }
 }
 
 /**
- * 2. VALIDAÇÃO DE FORMULÁRIO (Inteligência e Segurança)
- * Valida o formulário de contato ou de envio de projetos do Agrinho.
+ * 2. VALIDAÇÃO DE FORMULÁRIO
+ * Valida o formulário de contato do projeto Agrinho.
  */
 function inicializarFormulario() {
     const formulario = document.querySelector("#form-agrinho");
 
     if (formulario) {
         formulario.addEventListener("submit", (evento) => {
-            evento.preventDefault(); // Impede o envio padrão do HTML
+            evento.preventDefault();
 
             const nome = document.querySelector("#nome").value.trim();
             const email = document.querySelector("#email").value.trim();
@@ -46,7 +59,6 @@ function inicializarFormulario() {
                 return;
             }
 
-            // Simulação de envio com sucesso
             exibirAlerta("Mensagem enviada com sucesso! Boa sorte no Agrinho 2026! 🌱", "sucesso");
             formulario.reset();
         });
@@ -61,33 +73,46 @@ function validarEmail(email) {
 
 // Função auxiliar para criar alertas visuais dinâmicos
 function exibirAlerta(texto, tipo) {
+    const alertaExistente = document.querySelector(".alerta");
+    if (alertaExistente) alertaExistente.remove();
+
     const caixaAlerta = document.createElement("div");
     caixaAlerta.className = `alerta alerta-${tipo}`;
     caixaAlerta.innerText = texto;
-
     document.body.appendChild(caixaAlerta);
 
-    // Remove o alerta da tela após 4 segundos
-    setTimeout(() => {
-        caixaAlerta.remove();
-    }, 4000);
+    setTimeout(() => caixaAlerta.remove(), 4000);
 }
 
 /**
- * 3. ANIMAÇÕES AO ROLAR A PÁGINA (Comportamento Dinâmico)
+ * 3. ANIMAÇÕES AO ROLAR A PÁGINA
  * Faz os elementos surgirem suavemente conforme o usuário rola a página.
  */
 function inicializarAnimacoes() {
-    const elementosParaAnimar = document.querySelectorAll(".animar-scroll");
+    const elementos = document.querySelectorAll(".animar-scroll");
 
     const observador = new IntersectionObserver((entradas) => {
         entradas.forEach(entrada => {
             if (entrada.isIntersecting) {
                 entrada.target.classList.add("visivel");
-                observador.unobserve(entrada.target); // Anima apenas uma vez
+                observador.unobserve(entrada.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 });
 
-    elementosParaAnimar.forEach(elemento => observador.observe(elemento));
+    elementos.forEach(el => observador.observe(el));
+}
+
+/**
+ * 4. FERRAMENTA INTERATIVA (Slider de economia de água)
+ */
+function inicializarFerramenta() {
+    const slider = document.querySelector("#agua");
+    const resultado = document.querySelector("#resultado-agua");
+
+    if (slider && resultado) {
+        slider.addEventListener("input", () => {
+            resultado.textContent = slider.value + "%";
+        });
+    }
 }
